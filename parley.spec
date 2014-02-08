@@ -1,7 +1,7 @@
 Name:		parley
 Summary:	KDE Vocabulary training application
 Version:	4.12.1
-Release:	1
+Release:	2
 Group:		Graphical desktop/KDE
 License:	GPLv2 GFDL LGPLv2+ LGPLv2
 URL:		http://edu.kde.org/parley
