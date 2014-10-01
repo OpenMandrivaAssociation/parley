@@ -1,13 +1,13 @@
-Name:		parley
 Summary:	KDE Vocabulary training application
+Name:		parley
 Version:	4.14.1
 Release:	1
+License:	GPLv2+
 Group:		Graphical desktop/KDE
-License:	GPLv2 GFDL LGPLv2+ LGPLv2
-URL:		http://edu.kde.org/parley
-Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kdelibs4-devel
+Url:		http://edu.kde.org/parley
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdeedu-devel >= %{version}
+BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(libattica)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
@@ -23,23 +23,24 @@ also known as flash cards.
 
 %files
 %doc COPYING COPYING.DOC AUTHORS
-%{_kde_bindir}/parley
+%doc %{_kde_docdir}/HTML/*/parley
+%{_kde_applicationsdir}/parley.desktop
 %{_kde_appsdir}/parley
 %{_kde_appsdir}/desktoptheme/default/widgets/parley_plasma_card.svg
-%{_kde_iconsdir}/*/*/apps/parley*
-%{_kde_applicationsdir}/parley.desktop
-%{_kde_services}/plasma-dataengine-parley.desktop
-%{_kde_services}/plasma_parley.desktop
+%{_kde_bindir}/parley
+%{_kde_configdir}/parley.knsrc
+%{_kde_configdir}/parley-themes.knsrc
+%{_kde_datadir}/appdata/parley.appdata.xml
 %{_kde_datadir}/config.kcfg/parley.kcfg
 %{_kde_datadir}/config.kcfg/languagesettings.kcfg
 %{_kde_datadir}/config.kcfg/documentsettings.kcfg
-%{_kde_configdir}/parley.knsrc
-%{_kde_configdir}/parley-themes.knsrc
+%{_kde_iconsdir}/*/*/apps/parley*
 %{_kde_libdir}/kde4/plasma_applet_parley.so
 %{_kde_libdir}/kde4/plasma_engine_parley.so
-%{_kde_docdir}/HTML/*/parley
+%{_kde_services}/plasma-dataengine-parley.desktop
+%{_kde_services}/plasma_parley.desktop
 
-#----------------------------------------------------------------------
+#----------------------------------------------------------------------------
 
 %prep
 %setup -q
@@ -54,6 +55,7 @@ also known as flash cards.
 %changelog
 * Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.1-1
 - New version 4.14.1
+- Update files
 
 * Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
 - New version 4.13.3
