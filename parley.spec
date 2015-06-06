@@ -11,7 +11,6 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	pkgconfig(libattica)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
-Requires:	libkdeedu = %{version}
 Requires:	python-mwclient
 
 %description
