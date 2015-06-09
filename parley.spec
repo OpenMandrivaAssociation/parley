@@ -32,9 +32,10 @@ also known as flash cards.
 
 %files
 %doc COPYING AUTHORS
+%doc %{_docdir}/HTML/*/parley
 %{_sysconfdir}/xdg/parley*.knsrc
 %{_datadir}/applications/org.kde.parley.desktop
-%{_iconsdir}/oxygen/*/actions/*.[gz]
+%{_iconsdir}/oxygen/*/actions/*.*[gz]
 %{_datadir}/kxmlgui5/parley
 %{_datadir}/parley
 
