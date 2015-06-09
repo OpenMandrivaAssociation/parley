@@ -8,10 +8,19 @@ Url:		http://edu.kde.org/parley
 Source0:	http://download.kde.org/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdeedu-devel >= %{version}
 BuildRequires:	cmake(ECM)
-BuildRequires:	pkgconfig(libattica)
-BuildRequires:	pkgconfig(libxml-2.0)
-BuildRequires:	pkgconfig(libxslt)
-Requires:	python-mwclient
+BuildRequires:	cmake(KF5DocTools)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5Crash)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5NewStuff)
+BuildRequires:	cmake(KF5Kross)
+BuildRequires:	cmake(KF5KHtml)
+BuildRequires:	cmake(KF5Sonnet)
+BuildRequires:	cmake(KF5KCMUtils)
+BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(KF5Notifications)
 
 %description
 Parley is a program to help you memorize things.
