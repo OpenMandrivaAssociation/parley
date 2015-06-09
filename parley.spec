@@ -41,6 +41,7 @@ also known as flash cards.
 %{_datadir}/config.kcfg/languagesettings.kcfg
 %{_datadir}/config.kcfg/parley.kcfg
 %{_iconsdir}/*/*/apps/*.*[gz]
+%{_iconsdir}/*/*/actions/*.*[gz]
 %{_datadir}/kxmlgui5/parley
 %{_datadir}/parley
 
