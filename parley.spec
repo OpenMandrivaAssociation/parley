@@ -37,7 +37,7 @@ also known as flash cards.
 %{_sysconfdir}/xdg/parley*.knsrc
 %{_bindir}/parley
 %{_datadir}/applications/org.kde.parley.desktop
-%{_datadir}/appdata/parley.appdata.xml
+%{_datadir}/appdata/org.kde.parley.appdata.xml
 %{_datadir}/config.kcfg/documentsettings.kcfg
 %{_datadir}/config.kcfg/languagesettings.kcfg
 %{_datadir}/config.kcfg/parley.kcfg
