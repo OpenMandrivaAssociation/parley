@@ -1,11 +1,12 @@
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	KDE Vocabulary training application
 Name:		parley
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/parley
-Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5CoreAddons)
@@ -31,13 +32,12 @@ Parley supports many language specific features but can be used for other
 learning tasks just as well. It uses the spaced repetition learning method,
 also known as flash cards.
 
-%files
+%files -f %{name}.lang
 %doc COPYING AUTHORS
-%doc %{_docdir}/HTML/*/parley
 %{_sysconfdir}/xdg/parley*.knsrc
 %{_bindir}/parley
 %{_datadir}/applications/org.kde.parley.desktop
-%{_datadir}/appdata/org.kde.parley.appdata.xml
+%{_datadir}/metainfo/org.kde.parley.appdata.xml
 %{_datadir}/config.kcfg/documentsettings.kcfg
 %{_datadir}/config.kcfg/languagesettings.kcfg
 %{_datadir}/config.kcfg/parley.kcfg
@@ -57,3 +57,4 @@ also known as flash cards.
 
 %install
 %ninja_install -C build
+%find_lang %{name} --with-html
