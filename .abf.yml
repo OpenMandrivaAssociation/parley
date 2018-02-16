@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   parley-17.12.1.tar.xz: ee2bbd12b4ddbdaa78146e9179f799c1576b2dea
+sources:
+  parley-17.12.2.tar.xz: 23538b78cf3afff9841431f2178af53a10e5a416
