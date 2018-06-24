@@ -1,12 +1,13 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	KDE Vocabulary training application
 Name:		parley
-Version:	 17.12.2
+Version:	 18.04.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/parley
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Patch0:		parley-18.04.2-python-3.7.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5CoreAddons)
@@ -26,6 +27,7 @@ BuildRequires:	cmake(LibKEduVocDocument)
 BuildRequires:	cmake(Qt5Multimedia)
 BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5WebEngineWidgets)
+
 %description
 Parley is a program to help you memorize things.
 
@@ -50,7 +52,10 @@ also known as flash cards.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%setup
+find . -name "*.py" |xargs 2to3 -w
+%apply_patches
+
 %cmake_kde5
 
 %build

@@ -1,0 +1,13 @@
+diff -up parley-18.04.2/plugins/wiktionary/mwclient/listing.py.omv~ parley-18.04.2/plugins/wiktionary/mwclient/listing.py
+--- parley-18.04.2/plugins/wiktionary/mwclient/listing.py.omv~	2018-06-24 14:37:25.336328357 +0200
++++ parley-18.04.2/plugins/wiktionary/mwclient/listing.py	2018-06-24 14:38:08.132329953 +0200
+@@ -1,6 +1,6 @@
+-from . import six
+-from . import six.moves
+-from .six import text_type
++import six
++import six.moves
++from six import text_type
+ from mwclient.util import parse_timestamp
+ import mwclient.page
+ import mwclient.image
