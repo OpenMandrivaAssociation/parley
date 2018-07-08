@@ -24,9 +24,15 @@ BuildRequires:	cmake(KF5KCMUtils)
 BuildRequires:	cmake(KF5XmlGui)
 BuildRequires:	cmake(KF5Notifications)
 BuildRequires:	cmake(LibKEduVocDocument)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Svg)
+BuildRequires:	cmake(Qt5Concurrent)
 BuildRequires:	cmake(Qt5Multimedia)
 BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5WebEngineWidgets)
+BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libxslt)
+
 
 %description
 Parley is a program to help you memorize things.
