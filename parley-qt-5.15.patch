@@ -1,0 +1,45 @@
+diff -up parley-20.03.80/src/editor/browserwidget.cpp.omv~ parley-20.03.80/src/editor/browserwidget.cpp
+--- parley-20.03.80/src/editor/browserwidget.cpp.omv~	2020-04-14 02:15:17.808552371 +0200
++++ parley-20.03.80/src/editor/browserwidget.cpp	2020-04-14 02:15:21.884598837 +0200
+@@ -37,11 +37,7 @@ BrowserWidget::BrowserWidget(QWidget *pa
+     connect(showCurrentButton, &QPushButton::clicked, this, &BrowserWidget::showCurrentTranslation);
+ 
+     setupProviders();
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+     connect(providerComboBox, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &BrowserWidget::providerChanged);
+-#else
+-    connect(providerComboBox, static_cast<void (KComboBox::*)(int, const QString &)>(&KComboBox::currentIndexChanged) , this, &BrowserWidget::providerChanged);
+-#endif
+ 
+ }
+ 
+diff -up parley-20.03.80/src/editor/declensionwidget.cpp.omv~ parley-20.03.80/src/editor/declensionwidget.cpp
+--- parley-20.03.80/src/editor/declensionwidget.cpp.omv~	2020-04-14 02:16:30.351372373 +0200
++++ parley-20.03.80/src/editor/declensionwidget.cpp	2020-04-14 02:16:34.371417402 +0200
+@@ -35,11 +35,7 @@ DeclensionWidget::DeclensionWidget(QWidg
+     numberSelection->setItemData(0, KEduVocWordFlag::Singular);
+     numberSelection->setItemData(1, KEduVocWordFlag::Dual);
+     numberSelection->setItemData(2, KEduVocWordFlag::Plural);
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+     connect(numberSelection, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &DeclensionWidget::updateEntries);
+-#else
+-    connect(numberSelection, static_cast<void (QComboBox::*)(int, const QString &)>(&QComboBox::currentIndexChanged) , this, &DeclensionWidget::updateEntries);
+-#endif
+ 
+     connect(nextButton, &QPushButton::clicked, this, &DeclensionWidget::nextNumber);
+ 
+diff -up parley-20.03.80/src/statistics/statisticsmainwindow.cpp.omv~ parley-20.03.80/src/statistics/statisticsmainwindow.cpp
+--- parley-20.03.80/src/statistics/statisticsmainwindow.cpp.omv~	2020-04-14 02:15:44.962861021 +0200
++++ parley-20.03.80/src/statistics/statisticsmainwindow.cpp	2020-04-14 02:15:49.099907860 +0200
+@@ -210,11 +210,7 @@ void StatisticsMainWindow::initPracticeM
+         Prefs::setPracticeDirection(Prefs::EnumPracticeDirection::MixedDirectionsWordsOnly);
+ 
+     m_ui->practiceDirection->setCurrentIndex(practiceDirection);
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+     connect(m_ui->practiceDirection, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+-#else
+-    connect(m_ui->practiceDirection, static_cast<void (QComboBox::*)(int, const QString &)>(&QComboBox::currentIndexChanged) ,
+-#endif
+             this, &StatisticsMainWindow::practiceDirectionChanged);
+ 
+     m_ui->rememberPracticeDirection->setChecked(Prefs::rememberPracticeDirection());
