@@ -33,7 +33,6 @@ BuildRequires:	cmake(Qt5WebEngineWidgets)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
 
-
 %description
 Parley is a program to help you memorize things.
 
@@ -58,9 +57,8 @@ also known as flash cards.
 #----------------------------------------------------------------------------
 
 %prep
-%setup
+%autosetup -p1
 find . -name "*.py" |xargs 2to3 -w
-%autopatch -p1
 
 %cmake_kde5
 
