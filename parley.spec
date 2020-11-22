@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	KDE Vocabulary training application
 Name:		parley
-Version:	20.08.3
+Version:	20.11.80
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -41,7 +41,7 @@ also known as flash cards.
 
 %files -f %{name}.lang
 %doc COPYING AUTHORS
-%{_sysconfdir}/xdg/parley*.knsrc
+%{_datadir}/knsrcfiles/parley*.knsrc
 %{_bindir}/parley
 %{_datadir}/applications/org.kde.parley.desktop
 %{_datadir}/metainfo/org.kde.parley.appdata.xml
