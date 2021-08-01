@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	KDE Vocabulary training application
 Name:		parley
-Version:	21.04.2
+Version:	21.07.90
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -40,7 +40,7 @@ learning tasks just as well. It uses the spaced repetition learning method,
 also known as flash cards.
 
 %files -f %{name}.lang
-%doc COPYING AUTHORS
+%doc AUTHORS
 %{_datadir}/knsrcfiles/parley*.knsrc
 %{_bindir}/parley
 %{_datadir}/applications/org.kde.parley.desktop
