@@ -1,8 +1,8 @@
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
+%define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	KDE Vocabulary training application
 Name:		parley
 Version:	23.04.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/parley
@@ -31,6 +31,9 @@ BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5WebEngineWidgets)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
+BuildRequires:	translate-shell
+Requires:	translate-shell
+Requires:	kross-interpreters-python
 
 %description
 Parley is a program to help you memorize things.
