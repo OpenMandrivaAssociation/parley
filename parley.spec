@@ -2,7 +2,7 @@
 Summary:	KDE Vocabulary training application
 Name:		parley
 Version:	23.08.1
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/parley
@@ -33,7 +33,6 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	translate-shell
 Requires:	translate-shell
-Requires:	kross-interpreters-python
 
 %description
 Parley is a program to help you memorize things.
