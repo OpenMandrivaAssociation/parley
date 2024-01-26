@@ -20,7 +20,7 @@ BuildRequires:	cmake(KF6KCMUtils)
 BuildRequires:	cmake(KF6XmlGui)
 BuildRequires:	cmake(KF6Notifications)
 BuildRequires:	cmake(KF6TextWidgets)
-BuildRequires:	cmake(LibKEduVocDocument)
+BuildRequires:	%mklibname -d KEduVocDocument6
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Svg)
 BuildRequires:	cmake(Qt6Concurrent)
