@@ -8,7 +8,7 @@ Version:	24.08.2
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://edu.kde.org/parley
+Url:		https://edu.kde.org/parley
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/education/parley/-/archive/%{gitbranch}/parley-%{gitbranchd}.tar.bz2#/parley-%{git}.tar.bz2
 %else
