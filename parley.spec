@@ -4,7 +4,7 @@
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	KDE Vocabulary training application
 Name:		parley
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -40,6 +40,11 @@ BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	translate-shell
 Requires:	translate-shell
 
+%rename plasma6-parley
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 Parley is a program to help you memorize things.
 
@@ -59,18 +64,3 @@ also known as flash cards.
 %{_iconsdir}/*/*/apps/*.*[gz]
 %{_iconsdir}/*/*/actions/*.*[gz]
 %{_datadir}/parley
-
-#----------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n parley-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang parley --with-html
